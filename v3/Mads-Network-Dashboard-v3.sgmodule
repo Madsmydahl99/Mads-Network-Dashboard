@@ -1,5 +1,5 @@
 #!name=Mads Network Dashboard v3
-#!desc=Clear, privacy-conscious NETWORK, CONNECTIVITY, DNS and manual SPEED diagnostics. Adds network-change cache hygiene and explanatory measurement labels. No routing, proxy, DNS-server, IPv6, rule, MITM, host, rewrite, or policy-group changes.
+#!desc=Clear, privacy-conscious NETWORK, CONNECTIVITY, DNS, manual SPEED and local LIVE TRAFFIC diagnostics. Adds network-change cache hygiene and explanatory measurement labels. No routing, proxy, DNS-server, IPv6, rule, MITM, host, rewrite, or policy-group changes.
 #!system=ios
 
 [Panel]
@@ -7,10 +7,12 @@ MadsDash3-Network = title=NETWORK,content=Loading network identity…,script-nam
 MadsDash3-Connectivity = title=CONNECTIVITY,content=Web RTT · includes DNS/TLS · lower is better\nLoading endpoint checks…,script-name=MadsDash3-Connectivity,update-interval=180
 MadsDash3-DNS = title=DNS,content=Loading read-only DNS status…\nRefresh clears cache manually,script-name=MadsDash3-DNS,update-interval=180
 MadsDash3-Speed = title=SPEED · MANUAL,content=Download — · Upload —\nWeb RTT — · variation —\nRefresh uses 2 MiB ↓ + 1 MiB ↑,script-name=MadsDash3-Speed
+MadsDash3-Traffic = title=LIVE TRAFFIC,content=Loading local interface telemetry…,script-name=MadsDash3-Traffic,update-interval=3
 
 [Script]
 MadsDash3-Network = type=generic,timeout=8,script-path=https://raw.githubusercontent.com/Madsmydahl99/Mads-Network-Dashboard/main/v3/MadsDash-Network-v3.js
 MadsDash3-Connectivity = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/Madsmydahl99/Mads-Network-Dashboard/main/v3/MadsDash-Connectivity-v3.js
 MadsDash3-DNS = type=generic,timeout=8,script-path=https://raw.githubusercontent.com/Madsmydahl99/Mads-Network-Dashboard/main/v3/MadsDash-DNS-v3.js
 MadsDash3-Speed = type=generic,timeout=45,script-path=https://raw.githubusercontent.com/Madsmydahl99/Mads-Network-Dashboard/main/v3/MadsDash-Speed-v3.js
+MadsDash3-Traffic = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/Madsmydahl99/Mads-Network-Dashboard/main/v3/MadsDash-Traffic-v3.js
 MadsDash3-NetworkChange = type=event,event-name=network-changed,timeout=3,script-path=https://raw.githubusercontent.com/Madsmydahl99/Mads-Network-Dashboard/main/v3/MadsDash-Network-v3.js
