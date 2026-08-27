@@ -1,0 +1,16 @@
+#!name=Surge Ulti Panels v1
+#!desc=Eight evidence-first native Surge 5 iOS panels. Read-only: no DNS flushes, policy changes, rule edits, profile reloads, request kills, or module toggles.
+#!system=ios
+
+[Panel]
+Change Correlator = title=CHANGE CORRELATOR,content=Building baseline…,style=info,script-name=Surge-Ulti-Panels-v1,update-interval=60
+Route Drift = title=ROUTE DRIFT,content=Comparing observed host routes…,style=info,script-name=Surge-Ulti-Panels-v1,update-interval=60
+DNS Lens = title=DNS LENS,content=Reading DNS state…,style=info,script-name=Surge-Ulti-Panels-v1,update-interval=60
+Latency Radar = title=LATENCY RADAR,content=Probing policy paths…,style=info,script-name=Surge-Ulti-Panels-v1,update-interval=60
+Rule Heatmap = title=RULE HEATMAP,content=Ranking recent matches…,style=info,script-name=Surge-Ulti-Panels-v1,update-interval=60
+Connection DNA = title=CONNECTION DNA,content=Fingerprinting current network…,style=info,script-name=Surge-Ulti-Panels-v1,update-interval=60
+Failover Brain = title=FAILOVER BRAIN,content=Comparing candidate paths…,style=info,script-name=Surge-Ulti-Panels-v1,update-interval=60
+Quiet Network = title=QUIET NETWORK,content=Inspecting recent chatter…,style=info,script-name=Surge-Ulti-Panels-v1,update-interval=60
+
+[Script]
+Surge-Ulti-Panels-v1 = type=generic,timeout=15,script-path=https://raw.githubusercontent.com/Madsmydahl99/Mads-Network-Dashboard/main/ulti-panels/v1/Surge-Ulti-Panels-v1.js,argument=WORK_POLICY=Work&AI_POLICY=AI&MEDIA_POLICY=Streaming&FAILOVER_A=Work&FAILOVER_B=AI
