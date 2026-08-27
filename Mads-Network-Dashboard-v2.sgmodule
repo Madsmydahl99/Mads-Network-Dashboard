@@ -1,0 +1,15 @@
+#!name=Mads Network Dashboard v2
+#!desc=Compact NETWORK, detailed CONNECTIVITY, useful DNS status/manual flush, and manual 3 MiB down+up SPEED test. No routing, proxy, DNS-server, IPv6, rule, MITM, host, rewrite, or policy-group changes.
+#!system=ios
+
+[Panel]
+MadsDash-Network = title=NETWORK,content=Loading…,script-name=MadsDash-Network,update-interval=180
+MadsDash-Connectivity = title=CONNECTIVITY,content=Loading…,script-name=MadsDash-Connectivity,update-interval=180
+MadsDash-DNS = title=DNS,content=Loading…,script-name=MadsDash-DNS,update-interval=180
+MadsDash-Speed = title=SPEED,content=↓ Download —\n↑ Upload —\nLatency —\n↻ Refresh = 3 MiB quick test,script-name=MadsDash-Speed
+
+[Script]
+MadsDash-Network = type=generic,timeout=8,script-path=https://raw.githubusercontent.com/Madsmydahl99/Mads-Network-Dashboard/main/MadsDash-Network.js
+MadsDash-Connectivity = type=generic,timeout=8,script-path=https://raw.githubusercontent.com/Madsmydahl99/Mads-Network-Dashboard/main/MadsDash-Connectivity.js
+MadsDash-DNS = type=generic,timeout=8,script-path=https://raw.githubusercontent.com/Madsmydahl99/Mads-Network-Dashboard/main/MadsDash-DNS.js
+MadsDash-Speed = type=generic,timeout=45,script-path=https://raw.githubusercontent.com/Madsmydahl99/Mads-Network-Dashboard/main/MadsDash-Speed.js
