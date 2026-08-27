@@ -210,6 +210,9 @@ async function main() {
   const changedPanel = await runScript('MadsDash-ChangeCorrelator-v3.js', correlatorContext(cellular, degradedMap));
   assert(changedPanel.content.includes('Path change + degradation'));
   assert(changedPanel.content.includes('Wi-Fi → Cellular'));
+  const countAfterChange = JSON.parse(correlatorStore['MadsDash.ChangeCorrelator.v3']).events.length;
+  await runScript('MadsDash-ChangeCorrelator-v3.js', correlatorContext(cellular, degradedMap));
+  assert.strictEqual(JSON.parse(correlatorStore['MadsDash.ChangeCorrelator.v3']).events.length, countAfterChange);
 
   const secretNotice = 'Profile reload token=do-not-store';
   await runScript('MadsDash-ChangeCorrelator-v3.js', correlatorContext(cellular, healthyMap, {

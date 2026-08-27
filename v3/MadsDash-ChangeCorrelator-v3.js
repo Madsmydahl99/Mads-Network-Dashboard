@@ -143,6 +143,9 @@
 
   function correlate(previous, current, delta, cause) {
     if (!previous) return { title: 'Baseline created', verdict: 'Watching for meaningful changes' };
+    if (cause === 'panel-refresh' && !delta.network.length && !delta.health && !delta.latency) {
+      return { title: 'No meaningful change', verdict: 'Current path remains ' + current.health.state };
+    }
     if (current.health.state === 'portal') {
       return { title: 'Captive portal suspected', verdict: 'Wi-Fi login interception observed' };
     }
