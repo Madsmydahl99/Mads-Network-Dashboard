@@ -1,0 +1,16 @@
+#!name=Surge Ulti Panels v2
+#!desc=Redesigned native Surge 5 iOS panels with compact formatting, custom SF Symbols, smarter error classification, route drift, DNS/cache insight, zero-config policy health, connection fingerprinting and recent-traffic analysis. Read-only.
+#!system=ios
+
+[Panel]
+Change Correlator = title=CHANGE CORRELATOR,content=Sampling recent network evidence…,script-name=Surge-Ulti-Panels-v2,update-interval=60
+Route Drift = title=ROUTE DRIFT,content=Comparing observed host routes…,script-name=Surge-Ulti-Panels-v2,update-interval=60
+DNS Lens = title=DNS LENS,content=Reading DNS/cache state…,script-name=Surge-Ulti-Panels-v2,update-interval=60
+Latency Radar = title=LATENCY RADAR,content=Discovering policy health…,script-name=Surge-Ulti-Panels-v2,update-interval=180
+Rule Heatmap = title=RULE HEATMAP,content=Ranking recent match evidence…,script-name=Surge-Ulti-Panels-v2,update-interval=60
+Connection DNA = title=CONNECTION DNA,content=Fingerprinting the current network…,script-name=Surge-Ulti-Panels-v2,update-interval=180
+Failover Brain = title=FAILOVER BRAIN,content=Comparing discovered policy paths…,script-name=Surge-Ulti-Panels-v2,update-interval=180
+Quiet Network = title=QUIET NETWORK,content=Filtering local noise from recent traffic…,script-name=Surge-Ulti-Panels-v2,update-interval=60
+
+[Script]
+Surge-Ulti-Panels-v2 = type=generic,timeout=15,ability=http-client-policy,script-update-interval=300,script-path=https://raw.githubusercontent.com/Madsmydahl99/Mads-Network-Dashboard/main/ulti-panels/v2/Surge-Ulti-Panels-v2.js
