@@ -1,6 +1,6 @@
 # Mads Network Dashboard v3
 
-A four-panel Surge iOS dashboard designed for readable, low-overhead network diagnostics.
+A five-panel Surge iOS dashboard designed for readable, low-overhead network diagnostics.
 
 ## What each panel means
 
@@ -8,6 +8,7 @@ A four-panel Surge iOS dashboard designed for readable, low-overhead network dia
 - **CONNECTIVITY** measures end-to-end HTTP response time to four deliberately different endpoints. It is not ICMP ping: the displayed time includes DNS resolution, connection setup, TLS, and the server response. The Cloudflare and Apple endpoints also act as captive-portal canaries.
 - **DNS** reads the current Surge DNS cache, observed resolvers, lookup delay, and network-provided DNS. Automatic evaluations are read-only. Only a manual panel refresh flushes the cache.
 - **SPEED · MANUAL** runs only from a manual refresh. It transfers about 3 MiB total (2 MiB download and 1 MiB upload) and stores the last result. Its RTT/variation values come from five small HTTP probes and are not ICMP ping.
+- **LIVE TRAFFIC** reads Surge's local `/v1/traffic` API. It shows current download/upload rates, totals since the Surge engine started, peak rates, and the selected interface. A manual refresh cycles interfaces when more than one is available. It sends no external network request.
 
 ## Safety boundary
 
@@ -15,7 +16,7 @@ The module contains only `[Panel]` and `[Script]` sections. It does not modify r
 
 ## Upgrade
 
-1. Install and verify v3.
+1. Install or update v3 and verify all five panels.
 2. Disable both the earlier **Mads Network Dashboard** module and **Mads Network Dashboard v2** after v3 renders successfully.
 3. This removes the obsolete **Sub Intelligence** panel because it belongs to the earlier module and is not included in v3.
 4. Refresh SPEED manually only when you want to spend about 3 MiB.
